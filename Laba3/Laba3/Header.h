@@ -21,5 +21,9 @@ struct stackch{
     elemch *top;
     stackch(void):top(NULL){}
 };
-
+void push(stack &a,const int value);
+bool pop(stack &a,int &out);
+void push1(stackch &a,const char value);
+bool pop1(stackch &a,char &out);
+int opPreced(const char ch);
 #endif 

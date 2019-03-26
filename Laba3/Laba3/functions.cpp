@@ -46,3 +46,11 @@ bool pop1(stackch &a,char &out){
     delete del;
     return true;
 }
+int opPreced(const char ch)
+{
+    if(ch=='*'||ch=='/')return 3;
+    else if(ch=='+'||ch=='-')return 2;
+    else if(ch=='(')return 1;
+    else if(ch==')')return -1;
+    else return 0;
+}
