@@ -54,3 +54,28 @@ int opPreced(const char ch)
     else if(ch==')')return -1;
     else return 0;
 }
+string Postfix(string s,int priority,stackch Operations,int num,int num1,char ch,string resmas){
+    for(int i=0;i<s.length();i++){
+        if(s[i]==' ')i++;
+        if(isdigit(s[i])){
+            resmas+=s[i];
+            num++;
+        }
+        else {
+            if(opPreced(s[i])<=priority){
+                pop1(Operations, ch);
+                resmas+=ch;
+                num1--;
+            }
+            priority=opPreced(s[i]);
+            push1(Operations,s[i]);
+            num1++;
+        }
+    }
+    for(int i=0;i<num1;i++){
+        pop1(Operations, ch);
+        resmas+=ch;
+    }
+    cout<<"postfix notation:"<<resmas<<endl;
+    return resmas;
+}
