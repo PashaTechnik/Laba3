@@ -79,3 +79,45 @@ string Postfix(string s,int priority,stackch Operations,int num,int num1,char ch
     cout<<"postfix notation:"<<resmas<<endl;
     return resmas;
 }
+
+void ResultExp(string s,stack Number,int result,string resmas){
+    string N;
+    int value=0;
+    for(int i=0;i<resmas.length();i++){
+        if(isdigit(resmas[i])){
+            N=resmas[i];
+            push(Number, stoi(N));
+        }
+        else if(resmas[i]=='*'){
+            pop(Number, value);
+            result=value;
+            pop(Number, value);
+            result*=value;
+            push(Number, result);
+        }
+        else if(resmas[i]=='/'){
+            pop(Number, value);
+            result=value;
+            pop(Number, value);
+            result=value/result;
+            push(Number, result);
+        }
+        else if(resmas[i]=='+'){
+            pop(Number, value);
+            result=value;
+            pop(Number, value);
+            result+=value;
+            push(Number, result);
+        }
+        else if(resmas[i]=='-'){
+            pop(Number, value);
+            result=-value;
+            pop(Number, value);
+            result+=value;
+            push(Number, result);
+        }
+    }
+    pop(Number, value);
+    result=value;
+    cout<<"result:"<<result<<endl;
+}
