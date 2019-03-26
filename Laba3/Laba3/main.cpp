@@ -12,5 +12,7 @@ int main(int argc, char* argv[]) {
     stack Number;
     stackch Operations;
     int priority=0;
+    resmas=Postfix(s, priority, Operations, num, num1, ch, resmas);
+    ResultExp(s, Number, result, resmas);
     return 0;
 }

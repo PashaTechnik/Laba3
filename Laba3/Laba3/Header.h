@@ -27,4 +27,5 @@ void push1(stackch &a,const char value);
 bool pop1(stackch &a,char &out);
 int opPreced(const char ch);
 Postfix(string s,int priority,stackch Operations,int num,int num1,char ch,string resmas);
+void ResultExp(string s,stack Number,int result,string resmas);
 #endif 
