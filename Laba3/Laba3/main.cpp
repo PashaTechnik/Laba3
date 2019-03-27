@@ -2,8 +2,10 @@
 #include <string>
 #include "Header.h"
 int main(int argc, char* argv[]) {
-    string s;
-    s=argv[1];
+    string s="";
+    for(int i=1;i<argc;i++){
+        s=s+argv[i];
+    }
     int result=0;
     char ch = '\0';
     string resmas="";
